@@ -25,11 +25,8 @@ public class MathServiceTest {
     @MethodSource("com.epam.izh.rd.online.Providers#testCompare")
     @DisplayName("Тест метода MathService.compare(int value1, int value2)")
     public int compare(int value1,int value2) {
-        if (value1<value2) {
-            return -1;
-        }
-        if (value1>value2) {
-            return 1;
+        if (value1 != value2) {
+            return value1 > value2 ? 1 : -1;
         }
         else {
             return 0;
@@ -42,15 +39,7 @@ public class MathServiceTest {
     @Test
     @DisplayName("Тест метода MathService.maxFrom(int value1, int value2)")
     public int maxFrom (int value1, int value2) {
-        if (value1>value2) {
-            return value1;
-        }
-        if (value1<value2) {
-            return value2;
-        }
-        else {
-            return 0;
-        }
+        return value1>value2 ? value1:value2;
     }
     void testMaxFrom() {
         assertEquals(2, mathService.maxFrom(-10, 2), "Для входных параметров: " + -10 + " " + 2);
