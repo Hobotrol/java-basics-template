@@ -26,8 +26,8 @@ public class MathServiceTest {
     @DisplayName("Тест метода MathService.compare(int value1, int value2)")
     void testCompare(int value1, int value2, int expected) {
         assertEquals(expected, mathService.compare(value1, value2), "Для входных параметров: " + value1 + " " + value2);
-    }
 
+    }
     @Test
     @DisplayName("Тест метода MathService.maxFrom(int value1, int value2)")
     void testMaxFrom() {
